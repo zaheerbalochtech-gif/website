@@ -1,0 +1,1082 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University of Turbat - Excellence Redefined</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                teal: "#0F4C5C",
+                darkTeal: "#093642",
+                gold: "#E0B354",
+                red: "#9A031E",
+                sand: "#F5F5F4",
+                white: "#FFFFFF",
+              },
+            },
+            fontFamily: {
+              sans: ["Outfit", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+              float: "float 6s ease-in-out infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body
+    class="bg-brand-sand text-gray-900 antialiased selection:bg-brand-gold selection:text-white"
+  >
+    <!-- Geometric Pattern Background (Fixed) -->
+    <div
+      class="fixed inset-0 z-0 opacity-[0.03] pointer-events-none"
+      style="
+        background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230F4C5C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);
+      "
+    ></div>
+
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6"
+    >
+      <div class="container mx-auto px-6 md:px-12">
+        <div
+          class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-black/5"
+        >
+          <!-- Logo -->
+          <div
+            class="flex items-center gap-3 cursor-pointer group"
+            onclick="window.location.href = 'index.html'"
+          >
+            <img
+              src="https://uot.edu.pk/img/uotlogo.png"
+              alt="UoT Logo"
+              class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="hidden md:flex flex-col leading-none">
+              <span class="text-lg font-bold text-brand-teal tracking-tight"
+                >University of Turbat</span
+              >
+            </div>
+          </div>
+
+          <!-- Desktop Links -->
+          <div
+            class="hidden xl:flex items-center gap-8 text-sm font-medium text-brand-teal/80"
+          >
+            <a
+              href="index.html"
+              class="hover:text-brand-teal transition-colors font-semibold"
+              >Home</a
+            >
+            <div class="relative group">
+              <button
+                class="flex items-center gap-1 hover:text-brand-teal transition-colors"
+              >
+                Academics <i data-lucide="chevron-down" class="w-3 h-3"></i>
+              </button>
+              <div
+                class="absolute top-full right-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <div
+                  class="bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 w-[600px] grid grid-cols-2 gap-6"
+                >
+                  <div>
+                    <h4
+                      class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3"
+                    >
+                      Faculties
+                    </h4>
+                    <a
+                      href="faculties.html"
+                      class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg"
+                      >Science & Engineering</a
+                    >
+                    <a
+                      href="department.html?id=arts"
+                      class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg"
+                      >Arts & Humanities</a
+                    >
+                    <a
+                      href="department.html?id=management"
+                      class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg"
+                      >Business & Economics</a
+                    >
+                    <a
+                      href="department.html?id=law"
+                      class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg"
+                      >Law & Justice</a
+                    >
+                  </div>
+                  <div class="bg-brand-sand rounded-xl p-4">
+                    <h4
+                      class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3"
+                    >
+                      Featured
+                    </h4>
+                    <div class="flex items-center gap-3 mb-3">
+                      <div
+                        class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-brand-gold shadow-sm"
+                      >
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                      </div>
+                      <div>
+                        <p class="font-bold text-brand-teal text-sm">
+                          Admission 2026
+                        </p>
+                        <p class="text-xs text-gray-500">
+                          Applications are open
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-brand-gold shadow-sm"
+                      >
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                      </div>
+                      <div>
+                        <p class="font-bold text-brand-teal text-sm">
+                          Prospectus
+                        </p>
+                        <p class="text-xs text-gray-500">Download PDF</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="hover:text-brand-teal transition-colors"
+              >Research</a
+            >
+            <a href="#" class="hover:text-brand-teal transition-colors"
+              >Life at UoT</a
+            >
+            <a href="#" class="hover:text-brand-teal transition-colors">News</a>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex items-center gap-4">
+            <a
+              href="#"
+              class="hidden md:flex text-sm font-bold text-brand-teal hover:text-brand-gold transition-colors"
+              >Portal Login</a
+            >
+            <a
+              href="faculties.html"
+              class="bg-brand-teal hover:bg-brand-darkTeal text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-brand-teal/20 flex items-center gap-2 group"
+            >
+              Apply Now
+              <i
+                data-lucide="arrow-right"
+                class="w-4 h-4 transition-transform group-hover:translate-x-1"
+              ></i>
+            </a>
+            <button
+              onclick="toggleMobileMenu()"
+              class="xl:hidden text-brand-teal"
+            >
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-[60] bg-brand-teal text-white transform translate-x-full transition-transform duration-500 xl:hidden"
+    >
+      <div class="p-8">
+        <div class="flex justify-between items-center mb-12">
+          <span class="font-bold text-2xl">Menu</span>
+          <button
+            onclick="toggleMobileMenu()"
+            class="p-2 bg-white/10 rounded-full"
+          >
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <div class="space-y-6 text-2xl font-serif">
+          <a
+            href="index.html"
+            class="block hover:text-brand-gold transition-colors"
+            >Home</a
+          >
+          <a
+            href="faculties.html"
+            class="block hover:text-brand-gold transition-colors"
+            >Academics</a
+          >
+          <a href="#" class="block hover:text-brand-gold transition-colors"
+            >Research</a
+          >
+          <a href="#" class="block hover:text-brand-gold transition-colors"
+            >Admissions</a
+          >
+          <a href="#" class="block hover:text-brand-gold transition-colors"
+            >Portal</a
+          >
+        </div>
+        <div class="mt-12 pt-12 border-t border-white/10">
+          <p class="text-sm text-brand-gold uppercase tracking-widest mb-4">
+            Contact
+          </p>
+          <p class="text-lg opacity-80">info@uot.edu.pk</p>
+          <p class="text-lg opacity-80">+92 852 411534</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header
+      class="relative h-[100vh] -mt-[10vh] overflow-hidden flex flex-col justify-end pb-20 clip-hero-bottom"
+    >
+      <!-- Parallax Background -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop"
+          class="w-full h-full object-cover scale-105 animate-slow-zoom"
+          alt="University Campus"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-brand-darkTeal via-brand-teal/40 to-transparent opacity-90"
+        ></div>
+      </div>
+
+      <div
+        class="container mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end"
+      >
+        <div class="lg:col-span-8">
+          <div
+            class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white mb-8 animate-fade-in-up"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"
+            ></span>
+            <span class="text-xs font-bold uppercase tracking-widest"
+              >Admissions Spring 2026</span
+            >
+          </div>
+          <h1
+            class="text-6xl md:text-8xl lg:text-9xl font-serif font-medium text-white leading-[0.9] mb-8 animate-fade-in-up"
+            style="animation-delay: 0.1s"
+          >
+            Tradition <br />
+            <span class="text-brand-gold italic pr-4">Meets</span> <br />
+            Innovation
+          </h1>
+          <p
+            class="text-lg md:text-xl text-gray-200 max-w-xl leading-relaxed animate-fade-in-up"
+            style="animation-delay: 0.2s"
+          >
+            Nestled in the heart of Kech, we are redefining higher education in
+            Balochistan through cutting-edge research, cultural preservation,
+            and academic excellence.
+          </p>
+        </div>
+
+        <!-- Glass News Widget -->
+        <!-- Glass News Widget -->
+        <div
+          class=" mt-10 w-180 h-100px lg:col-span-4 animate-fade-in-up"
+          style="animation-delay: 0.3s"
+        >
+          <div
+            class=" bg-white/10 backdrop-blur-xl border border-white/20 p-2 rounded-3xl shadow-2xl relative overflow-hidden group"
+          >
+            <!-- Decorative Glow -->
+            <div
+              class="absolute -right-10 top-2 w-[20px] h-[40px] bg-brand-gold/20 rounded-full blur-3xl group-hover:bg-brand-gold/30 transition-all duration-700"
+            ></div>
+
+            <!-- Latest News Header -->
+            <h3 class="text-white text-2xl font-bold mb-2">Latest News</h3>
+            <p class="text-white/70 text-sm mb-6">
+              Stay updated with the most recent headlines.
+            </p>
+
+            <!-- Three News Items -->
+            <div class="space-y-4">
+              <div
+                class="bg-black/20 border border-white/10 rounded-xl p-4 text-white"
+              >
+                <h4 class="font-bold text-lg mb-2">
+                  Breaking: Major Tech Merger Announced
+                </h4>
+                <p class="text-white/70 text-sm">
+                  Two leading companies have agreed to merge, reshaping the
+                  industry landscape.
+                </p>
+              </div>
+              <div
+                class="bg-black/20 border border-white/10 rounded-xl p-4 text-white"
+              >
+                <h4 class="font-bold text-lg mb-2">Global Markets Rally</h4>
+                <p class="text-white/70 text-sm">
+                  Stocks surge after positive economic outlook.
+                </p>
+              </div>
+              <div
+                class="bg-black/20 border border-white/10 rounded-xl p-4 text-white"
+              >
+                <h4 class="font-bold text-lg mb-2">New AI Breakthrough</h4>
+                <p class="text-white/70 text-sm">
+                  Researchers unveil a model with unprecedented accuracy.
+                </p>
+              </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="mt-6">
+              <a
+                href="all-news.html"
+                class="w-full bg-brand-gold hover:bg-white hover:text-brand-teal text-brand-teal font-bold py-4 rounded-xl transition-all flex justify-center items-center gap-2"
+              >
+                View More <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Marquee -->
+    <div class="bg-brand-gold overflow-hidden py-3">
+      <div class="flex whitespace-nowrap animate-marquee">
+        <span
+          class="mx-8 text-brand-darkTeal font-bold uppercase tracking-wider text-sm flex items-center gap-2"
+          ><i data-lucide="star" class="w-3 h-3 fill-current"></i> Merit List
+          Spring 2026 Announced</span
+        >
+        <span
+          class="mx-8 text-brand-darkTeal font-bold uppercase tracking-wider text-sm flex items-center gap-2"
+          ><i data-lucide="star" class="w-3 h-3 fill-current"></i> Convocation
+          Registration Open</span
+        >
+        <span
+          class="mx-8 text-brand-darkTeal font-bold uppercase tracking-wider text-sm flex items-center gap-2"
+          ><i data-lucide="star" class="w-3 h-3 fill-current"></i> Research
+          Grant Applications Due Feb 15</span
+        >
+        <span
+          class="mx-8 text-brand-darkTeal font-bold uppercase tracking-wider text-sm flex items-center gap-2"
+          ><i data-lucide="star" class="w-3 h-3 fill-current"></i> Merit List
+          Spring 2026 Announced</span
+        >
+        <span
+          class="mx-8 text-brand-darkTeal font-bold uppercase tracking-wider text-sm flex items-center gap-2"
+          ><i data-lucide="star" class="w-3 h-3 fill-current"></i> Convocation
+          Registration Open</span
+        >
+        <span
+          class="mx-8 text-brand-darkTeal font-bold uppercase tracking-wider text-sm flex items-center gap-2"
+          ><i data-lucide="star" class="w-3 h-3 fill-current"></i> Research
+          Grant Applications Due Feb 15</span
+        >
+      </div>
+    </div>
+
+    <!-- About / Stats Section (Modern Bento) -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-4 md:px-12">
+        <div class="md:flex-row justify-between items-end mb-16">
+          <div class="flex flex-col justify-center align-item text-center">
+            <span
+              class="text-brand-gold text-center font-bold uppercase tracking-widest text-xs mb-2 block"
+              >Our Impact</span
+            >
+            <h2
+              class="text-4xl md:text-5xl font-serif text-brand-darkTeal leading-tight"
+            >
+              Empowering a <br />
+              Region
+            </h2>
+          </div>
+          <p class="text-center ml-[30px] text-gray-500 max-w-md mt-4 md:mt-0 text-lg">
+            We are the intellectual hub of Mekran, fostering a community of
+            critical thinkers and innovators.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 h-auto md:h-[500px]"
+        >
+          <!-- Card 1: Main Image -->
+          <div
+            class="md:col-span-2 md:row-span-2 rounded-[2rem] overflow-hidden relative group cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"
+            ></div>
+            <div class="absolute bottom-0 left-0 p-8">
+              <div
+                class="bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-2 rounded-full text-xs font-bold inline-block mb-3"
+              >
+                Campus Life
+              </div>
+              <h3 class="text-3xl text-white font-serif">
+                A Vibrant Community
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card 2: Stat -->
+          <div
+            class="bg-brand-sand rounded-[2rem] p-8 flex flex-col justify-between hover:bg-brand-gold hover:text-white transition-colors duration-300 group"
+          >
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-teal group-hover:text-brand-gold shadow-sm"
+            >
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-5xl font-bold mb-1">3.5k+</h3>
+              <p
+                class="text-sm font-medium opacity-60 uppercase tracking-wider"
+              >
+                Students Enrolled
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Research -->
+          <div
+            class="bg-brand-darkTeal text-white rounded-[2rem] p-8 flex flex-col justify-between relative overflow-hidden group"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-brand-teal rounded-full blur-3xl -mr-10 -mt-10"
+            ></div>
+            <div>
+              <h4 class="font-serif text-2xl mb-2">
+                Research <br />
+                Excellence
+              </h4>
+              <p class="text-white/60 text-sm">
+                Leading 15+ national research projects.
+              </p>
+            </div>
+            <div
+              class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-brand-darkTeal transition-all cursor-pointer"
+            >
+              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+            </div>
+          </div>
+
+          <!-- Card 4: Stat -->
+          <div
+            class="bg-brand-sand rounded-[2rem] p-8 flex flex-col justify-between hover:bg-brand-gold hover:text-white transition-colors duration-300 group"
+          >
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-teal group-hover:text-brand-gold shadow-sm"
+            >
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-5xl font-bold mb-1">92%</h3>
+              <p
+                class="text-sm font-medium opacity-60 uppercase tracking-wider"
+              >
+                Employment Rate
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5: Link -->
+          <div
+            class="bg-white border border-gray-100 rounded-[2rem] p-8 flex flex-col justify-center items-center text-center cursor-pointer hover:shadow-xl transition-all"
+          >
+            <h3 class="text-brand-teal font-bold text-lg mb-2">
+              Alumni Network
+            </h3>
+            <p class="text-gray-400 text-sm mb-4">
+              Connect with 5000+ graduates
+            </p>
+            <span class="text-brand-gold font-bold text-sm"
+              >Join Network &rarr;</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculties Horizontal Scroll -->
+    <section class="py-24 bg-brand-sand overflow-hidden">
+      <div
+        class="container mx-auto px-6 md:px-12 mb-12 flex justify-between items-end"
+      >
+        <div>
+          <span
+            class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-2 block"
+            >Academics</span
+          >
+          <h2 class="text-4xl font-serif text-brand-darkTeal">Study at UoT</h2>
+        </div>
+        <div class="flex gap-2">
+          <button
+            class="w-12 h-12 rounded-full border border-brand-darkTeal/10 flex items-center justify-center hover:bg-brand-darkTeal hover:text-white transition-all"
+          >
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+          </button>
+          <button
+            class="w-12 h-12 rounded-full border border-brand-darkTeal/10 flex items-center justify-center hover:bg-brand-darkTeal hover:text-white transition-all"
+          >
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cards Container (Flex for horizontal feel) -->
+      <div
+        class="flex gap-6 overflow-x-auto pb-10 px-6 md:px-12 snap-x hide-scroll"
+      >
+        <!-- Card 1 -->
+        <a
+          href="department.html?id=science"
+          class="min-w-[350px] md:min-w-[400px] h-[500px] rounded-3xl relative overflow-hidden group snap-center cursor-pointer"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end"
+          >
+            <div
+              class="w-12 h-1 bg-brand-gold mb-4 w-0 group-hover:w-12 transition-all duration-500"
+            ></div>
+            <span
+              class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2"
+              >Faculty of</span
+            >
+            <h3 class="text-3xl text-white font-serif leading-tight mb-4">
+              Science, Engineering & IT
+            </h3>
+            <p
+              class="text-gray-300 text-sm opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+            >
+              Pioneering technological advancement in Balochistan with
+              state-of-the-art labs.
+            </p>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a
+          href="department.html?id=law"
+          class="min-w-[350px] md:min-w-[400px] h-[500px] rounded-3xl relative overflow-hidden group snap-center cursor-pointer"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end"
+          >
+            <div
+              class="w-12 h-1 bg-brand-gold mb-4 w-0 group-hover:w-12 transition-all duration-500"
+            ></div>
+            <span
+              class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2"
+              >Faculty of</span
+            >
+            <h3 class="text-3xl text-white font-serif leading-tight mb-4">
+              Law & Justice
+            </h3>
+            <p
+              class="text-gray-300 text-sm opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+            >
+              Upholding the rule of law through rigorous legal education.
+            </p>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a
+          href="department.html?id=arts"
+          class="min-w-[350px] md:min-w-[400px] h-[500px] rounded-3xl relative overflow-hidden group snap-center cursor-pointer"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end"
+          >
+            <div
+              class="w-12 h-1 bg-brand-gold mb-4 w-0 group-hover:w-12 transition-all duration-500"
+            ></div>
+            <span
+              class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2"
+              >Institute of</span
+            >
+            <h3 class="text-3xl text-white font-serif leading-tight mb-4">
+              Balochi Language & Culture
+            </h3>
+            <p
+              class="text-gray-300 text-sm opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+            >
+              Preserving our rich heritage while embracing modernity.
+            </p>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a
+          href="department.html?id=management"
+          class="min-w-[350px] md:min-w-[400px] h-[500px] rounded-3xl relative overflow-hidden group snap-center cursor-pointer"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2000&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end"
+          >
+            <div
+              class="w-12 h-1 bg-brand-gold mb-4 w-0 group-hover:w-12 transition-all duration-500"
+            ></div>
+            <span
+              class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2"
+              >Faculty of</span
+            >
+            <h3 class="text-3xl text-white font-serif leading-tight mb-4">
+              Management Sciences
+            </h3>
+            <p
+              class="text-gray-300 text-sm opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+            >
+              Developing leaders for the emerging economic hub of the region.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-6 md:px-12">
+        <h2 class="text-4xl font-serif text-brand-darkTeal mb-12 text-center">
+          Latest from UoT
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- News Item -->
+          <article class="group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl mb-4 h-64">
+              <img
+                src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2070&auto=format&fit=crop"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-500 mb-2">
+              <span class="text-brand-gold font-bold uppercase">Academic</span>
+              <span>•</span>
+              <span>Dec 15, 2025</span>
+            </div>
+            <h3
+              class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors leading-snug"
+            >
+              Management Sciences Department Restructures BBA Curriculum for
+              2026
+            </h3>
+          </article>
+
+          <!-- News Item -->
+          <article class="group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl mb-4 h-64">
+              <img
+                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-500 mb-2">
+              <span class="text-brand-gold font-bold uppercase">Training</span>
+              <span>•</span>
+              <span>Dec 12, 2025</span>
+            </div>
+            <h3
+              class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors leading-snug"
+            >
+              Faculty Development Program: Workshop on Distance Learning Tools
+            </h3>
+          </article>
+
+          <!-- News Item -->
+          <article class="group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl mb-4 h-64">
+              <img
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1949&auto=format&fit=crop"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-500 mb-2">
+              <span class="text-brand-gold font-bold uppercase"
+                >Admissions</span
+              >
+              <span>•</span>
+              <span>Dec 09, 2025</span>
+            </div>
+            <h3
+              class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors leading-snug"
+            >
+              Entry Test Schedule Announced for Graduate Programs (Spring 2026)
+            </h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vice Chancellor Message Section -->
+    <section class="py-24 bg-brand-sand">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5">
+            <div
+              class="rounded-3xl overflow-hidden shadow-xl border border-white/40 bg-white"
+            >
+              <img
+                src="images/vc.jpg"
+                alt="Vice Chancellor"
+                class="w-full h-[420px] object-cover"
+              />
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <span
+              class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-3 block"
+              >Message from</span
+            >
+            <h2
+              class="text-4xl md:text-5xl font-serif text-brand-darkTeal leading-tight mb-4"
+            >
+              The Vice Chancellor
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              VC add your message. At the University of Turbat, we are committed
+              to fostering an environment that nurtures creativity, critical
+              thinking, and community impact. Our vision is to empower students
+              with the knowledge and values to serve society with excellence.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-8">
+              I invite you to explore our programs, engage with our vibrant
+              campus life, and become part of a tradition that embraces
+              innovation.
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-brand-gold text-brand-darkTeal flex items-center justify-center"
+              >
+                <i data-lucide="feather" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-bold text-brand-teal">
+                  Prof. [Name], Vice Chancellor
+                </p>
+                <p class="text-sm text-gray-500">University of Turbat</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      aria-label="Back to top"
+      class="hidden fixed bottom-6 right-6 z-[70] w-12 h-12 rounded-full bg-brand-gold text-brand-darkTeal shadow-lg hover:bg-white transition-colors flex items-center justify-center"
+    >
+      <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+    <!-- Campus Life Gallery (New Section) -->
+    <section class="py-24 bg-brand-darkTeal text-white overflow-hidden">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div>
+            <span
+              class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-2 block"
+              >Visual Journey</span
+            >
+            <h2 class="text-4xl font-serif">Life on Campus</h2>
+          </div>
+          <a
+            href="#"
+            class="text-brand-gold hover:text-white transition-colors border-b border-brand-gold pb-1"
+            >View Full Gallery &rarr;</a
+          >
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px]">
+          <div
+            class="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=1969&auto=format&fit=crop"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"
+            ></div>
+            <div
+              class="absolute bottom-4 left-4 font-bold text-lg drop-shadow-lg"
+            >
+              Central Library
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden relative group">
+            <img
+              src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=1974&auto=format&fit=crop"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-4 left-4 font-bold text-sm drop-shadow-lg"
+            >
+              Sports Complex
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden relative group">
+            <img
+              src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-4 left-4 font-bold text-sm drop-shadow-lg"
+            >
+              Science Labs
+            </div>
+          </div>
+          <div class="col-span-2 rounded-2xl overflow-hidden relative group">
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute bottom-4 left-4 font-bold text-lg drop-shadow-lg"
+            >
+              Student Center
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer (Dark Mode) -->
+    <footer
+      class="bg-brand-darkTeal text-white pt-24 pb-12 relative overflow-hidden"
+    >
+      <div
+        class="flex justify-center items-center text-center absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal rounded-full blur-[120px] opacity-30 pointer-events-none"
+      ></div>
+
+      <div class="container mx-auto px-6 md:px-12 relative z-10">
+        <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+          <div class="lg:col-span-4">
+            <div class="flex items-center gap-3 mb-8">
+              <img
+                src="https://uot.edu.pk/img/uotlogo.png"
+                class="h-16 w-auto bg-white rounded-xl p-1"
+              />
+              <div>
+                <h3 class="text-2xl font-serif font-bold">
+                  University of Turbat
+                </h3>
+                <p class="text-brand-gold text-sm tracking-widest uppercase">
+                  Tradition • Innovation
+                </p>
+              </div>
+            </div>
+            <p class="text-white/60 leading-relaxed mb-8">
+              The University of Turbat is a public sector university in Turbat,
+              Balochistan, Pakistan. We are committed to providing quality
+              education and fostering a culture of research and innovation.
+            </p>
+            <div class="flex items-center gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"
+                ><i data-lucide="facebook" class="w-4 h-4"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"
+                ><i data-lucide="twitter" class="w-4 h-4"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"
+                ><i data-lucide="linkedin" class="w-4 h-4"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"
+                ><i data-lucide="instagram" class="w-4 h-4"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2 lg:col-start-6">
+            <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+            <ul class="space-y-4 text-white/60">
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >Administration</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >Campus Life</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >News & Events</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-2">
+            <h4 class="font-bold text-lg mb-6">Admissions</h4>
+            <ul class="space-y-4 text-white/60">
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >How to Apply</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >Fee Structure</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >Scholarships</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >Prospectus</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-gold transition-colors"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-3">
+            <h4 class="font-bold text-lg mb-6">Newsletter</h4>
+            <p class="text-white/60 mb-4 text-sm">
+              Subscribe to receive updates on admissions and events.
+            </p>
+            <div class="flex gap-2">
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="bg-white/10 border border-white/10 rounded-lg px-4 py-3 w-full text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-brand-gold"
+              />
+              <button
+                class="bg-brand-gold text-brand-darkTeal px-4 rounded-lg font-bold hover:bg-white transition-colors"
+              >
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/40"
+        >
+          <p>&copy; 2026 University of Turbat. All rights reserved.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-white transition-colors"
+              >Terms of Use</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+      // Specific script for the sticky header transition
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("py-3");
+          navbar.classList.remove("py-6");
+        } else {
+          navbar.classList.add("py-6");
+          navbar.classList.remove("py-3");
+        }
+      });
+
+      // Back-to-Top button logic for this page
+      (function () {
+        const backToTop = document.getElementById("back-to-top");
+        if (!backToTop) return;
+
+        const toggleVisibility = () => {
+          if (window.scrollY > 300) {
+            backToTop.classList.remove("hidden");
+          } else {
+            backToTop.classList.add("hidden");
+          }
+        };
+
+        // Initialize state and bind events
+        toggleVisibility();
+        window.addEventListener("scroll", toggleVisibility, { passive: true });
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      })();
+    </script>
+  </body>
+</html>

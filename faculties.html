@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore faculties and departments at the University of Turbat, including Science & Engineering, Arts & Humanities, Business & Economics, Social Sciences, and Law & Justice.">
+    <title>Faculties - University of Turbat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            teal: '#0F4C5C',
+                            darkTeal: '#093642',
+                            gold: '#E0B354',
+                            red: '#9A031E',
+                            sand: '#F5F5F4',
+                            white: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-sand text-gray-900 antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- Geometric Pattern Background (Fixed) -->
+    <div class="fixed inset-0 z-0 opacity-[0.03] pointer-events-none"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%230F4C5C\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Primary" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6">
+        <div class="container mx-auto px-6 md:px-12">
+            <div
+                class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-black/5">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer group" onclick="window.location.href='index.html'">
+                    <img src="https://uot.edu.pk/img/uotlogo.png" alt="UoT Logo"
+                        class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+                    <div class="hidden md:flex flex-col leading-none">
+                        <span class="text-lg font-bold text-brand-teal tracking-tight">University of Turbat</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Links -->
+                <div class="hidden xl:flex items-center gap-8 text-sm font-medium text-brand-teal/80">
+                    <a href="index.html" class="hover:text-brand-teal transition-colors font-semibold">Home</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-brand-teal transition-colors">Academics <i
+                                data-lucide="chevron-down" class="w-3 h-3"></i></button>
+                        <div
+                            class="absolute top-full right-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div
+                                class="bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 w-[600px] grid grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Faculties
+                                    </h4>
+                                    <a href="#science-engineering"
+                                        class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg">Science
+                                        & Engineering</a>
+                                    <a href="#arts-humanities"
+                                        class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg">Arts
+                                        & Humanities</a>
+                                    <a href="#business-economics"
+                                        class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg">Business
+                                        & Economics</a>
+                                    <a href="#law-justice"
+                                        class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg">Law &
+                                        Justice</a>
+                                </div>
+                                <div class="bg-brand-sand rounded-xl p-4">
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Featured
+                                    </h4>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-brand-gold shadow-sm">
+                                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-brand-teal text-sm">Admission 2026</p>
+                                            <p class="text-xs text-gray-500">Applications are open</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-brand-gold shadow-sm">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-brand-teal text-sm">Prospectus</p>
+                                            <p class="text-xs text-gray-500">Download PDF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="hover:text-brand-teal transition-colors">Research</a>
+                    <a href="#" class="hover:text-brand-teal transition-colors">Life at UoT</a>
+                    <a href="#" class="hover:text-brand-teal transition-colors">News</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex items-center gap-4">
+                    <a href="#"
+                        class="hidden md:flex text-sm font-bold text-brand-teal hover:text-brand-gold transition-colors">Portal
+                        Login</a>
+                    <a href="faculties.html"
+                        class="bg-brand-teal hover:bg-brand-darkTeal text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-brand-teal/20 flex items-center gap-2 group">
+                        Apply Now <i data-lucide="arrow-right"
+                            class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <button onclick="toggleMobileMenu()" class="xl:hidden text-brand-teal" aria-expanded="false" aria-controls="mobile-menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-brand-teal text-white transform translate-x-full transition-transform duration-500 xl:hidden" aria-hidden="true">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-12">
+                <span class="font-bold text-2xl">Menu</span>
+                <button onclick="toggleMobileMenu()" class="p-2 bg-white/10 rounded-full" aria-label="Close menu"><i data-lucide="x"
+                        class="w-6 h-6"></i></button>
+            </div>
+            <div class="space-y-6 text-2xl font-serif">
+                <a href="index.html" class="block hover:text-brand-gold transition-colors">Home</a>
+                <a href="faculties.html" class="block hover:text-brand-gold transition-colors">Academics</a>
+                <a href="#" class="block hover:text-brand-gold transition-colors">Research</a>
+                <a href="#" class="block hover:text-brand-gold transition-colors">Admissions</a>
+                <a href="#" class="block hover:text-brand-gold transition-colors">Portal</a>
+            </div>
+            <div class="mt-12 pt-12 border-t border-white/10">
+                <p class="text-sm text-brand-gold uppercase tracking-widest mb-4">Contact</p>
+                <p class="text-lg opacity-80">info@uot.edu.pk</p>
+                <p class="text-lg opacity-80">+92 852 411534</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="relative z-10 pt-32 pb-20">
+        <!-- Header -->
+        <div class="container mx-auto px-6 md:px-12 mb-20 text-center">
+            <span
+                class="text-brand-gold font-bold uppercase tracking-widest text-xs mb-4 block animate-fade-in-up">Academic
+                Excellence</span>
+            <h1 class="text-5xl md:text-7xl font-serif text-brand-darkTeal mb-6 animate-fade-in-up"
+                style="animation-delay: 0.1s;">Faculties & Departments</h1>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto font-light animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                Discover our diverse range of disciplines, where traditional wisdom meets modern innovation.
+            </p>
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 space-y-24">
+
+            <!-- Faculty Block 1 -->
+            <div id="science-engineering" class="grid lg:grid-cols-12 gap-12 items-center scroll-mt-32">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <h2 class="text-3xl font-serif text-brand-teal mb-6">Faculty of Science & Engineering</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Home to our most advanced laboratories and research centers. We are pioneering technological
+                        solutions for the region's unique challenges, from arid agriculture to renewable energy.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="department.html?id=science"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Computer Science & IT</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years),MS (2 years) bscs-pad is a 2-Year Undergraduate program offered • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="department.html?id=science"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Chemistry</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MPhil (2 years), chem-pad is a 2-Year Undergraduate program offered • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="department.html?id=science"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Natural and Basic Sciences</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div
+                            class="block bg-white border border-gray-100 p-6 rounded-2xl opacity-60 cursor-not-allowed" aria-disabled="true">
+                            <h3 class="text-xl font-bold text-gray-400">Department of Natural Sciences</h3>
+                            <p class="text-sm text-gray-400 mt-1">Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div class="relative rounded-[2.5rem] overflow-hidden h-[500px] shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop" alt="Science and Engineering" loading="lazy"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-darkTeal/20 mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty Block 2 -->
+            <div id="arts-humanities" class="grid lg:grid-cols-12 gap-12 items-center scroll-mt-32">
+                <div class="lg:col-span-7">
+                    <div class="relative rounded-[2.5rem] overflow-hidden h-[500px] shadow-2xl group">
+                        <img src="https://i.imgur.com/4Cw3x8M.jpg" alt="Arts and Humanities" loading="lazy"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-darkTeal/20 mix-blend-multiply"></div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5">
+                    <h2 class="text-3xl font-serif text-brand-teal mb-6">Faculty of Arts & Humanities</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        The custodian of our heritage. This faculty is dedicated to the preservation of Balochi
+                        literature and the promotion of social sciences.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="department.html?id=arts"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Institute of Balochi Language</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of English</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty Block 3 -->
+            <div id="business-economics" class="grid lg:grid-cols-12 gap-12 items-center scroll-mt-32">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <h2 class="text-3xl font-serif text-brand-teal mb-6">Faculty of Business & Economics</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Developing entrepreneurial leaders and economists equipped to solve real-world business and policy challenges in the region.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="department.html?id=science"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Management Sciences</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="department.html?id=science"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Economics</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="department.html?id=science"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Commerce</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div class="relative rounded-[2.5rem] overflow-hidden h-[500px] shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop" alt="Business and Economics" loading="lazy"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-darkTeal/20 mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faculty Block 4 -->
+            <div id="social-sciences" class="grid lg:grid-cols-12 gap-12 items-center scroll-mt-32">
+                <div class="lg:col-span-7">
+                    <div class="relative rounded-[2.5rem] overflow-hidden h-[500px] shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2000&auto=format&fit=crop" alt="Social Sciences" loading="lazy"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-darkTeal/20 mix-blend-multiply"></div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5">
+                    <h2 class="text-3xl font-serif text-brand-teal mb-6">Faculty of Social Sciences</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        The custodian of our heritage. This faculty is dedicated to the preservation of Balochi
+                        literature and the promotion of social sciences.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="department.html?id=arts"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Political Science</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Education</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Sociology</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Faculty Block 5 -->
+            <div id="law-justice" class="grid lg:grid-cols-12 gap-12 items-center scroll-mt-32">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <h2 class="text-3xl font-serif text-brand-teal mb-6">Faculty of Law & Justice</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Preparing graduates with a strong foundation in legal theory and practice, committed to justice and the rule of law.
+                    </p>
+                    <div class="space-y-4">
+                        <a href="department.html?id=science"
+                            class="group block bg-white border border-gray-100 p-6 rounded-2xl hover:shadow-xl hover:border-brand-gold/30 transition-all cursor-pointer no-underline">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3
+                                        class="text-xl font-bold text-gray-900 group-hover:text-brand-teal transition-colors">
+                                        Department of Law</h3>
+                                    <p class="text-sm text-gray-400 mt-1">Degrees: BS (4 years), MA/MSc (2 years), MPhil (2 years), PhD (3–5 years) • Research: Department labs/centers</p>
+                                </div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-sand flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div class="relative rounded-[2.5rem] overflow-hidden h-[500px] shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop" alt="Law and Justice" loading="lazy"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-darkTeal/20 mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
+    </main>
+
+    <!-- Footer (Dark Mode) -->
+    <footer class="bg-brand-darkTeal text-white pt-24 pb-12 relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal rounded-full blur-[120px] opacity-30 pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-3 mb-8">
+                        <img src="https://uot.edu.pk/img/uotlogo.png" alt="UoT Logo" class="h-16 w-auto bg-white rounded-xl p-1">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold">University of Turbat</h3>
+                            <p class="text-brand-gold text-sm tracking-widest uppercase">Tradition • Innovation</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 leading-relaxed mb-8">
+                        The University of Turbat is a public sector university in Turbat, Balochistan, Pakistan. We are
+                        committed to providing quality education and fostering a culture of research and innovation.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"><i
+                                data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"><i
+                                data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"><i
+                                data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"><i
+                                data-lucide="instagram" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 lg:col-start-6">
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-white/60">
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Administration</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Campus Life</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">News & Events</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold text-lg mb-6">Admissions</h4>
+                    <ul class="space-y-4 text-white/60">
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">How to Apply</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Fee Structure</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Scholarships</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Prospectus</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h4 class="font-bold text-lg mb-6">Newsletter</h4>
+                    <p class="text-white/60 mb-4 text-sm">Subscribe to receive updates on admissions and events.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Email Address"
+                            class="bg-white/10 border border-white/10 rounded-lg px-4 py-3 w-full text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-brand-gold">
+                        <button
+                            class="bg-brand-gold text-brand-darkTeal px-4 rounded-lg font-bold hover:bg-white transition-colors"><i
+                                data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
+                <p>&copy; 2026 University of Turbat. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+    <script>
+    // Enhance accessibility and interactivity: sticky header, mobile menu, icons, and dynamic faculty images
+    (function() {
+    const onScroll = () => {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+    if (window.scrollY > 50) {
+    navbar.classList.add('py-3');
+    navbar.classList.remove('py-6');
+    } else {
+    navbar.classList.add('py-6');
+    navbar.classList.remove('py-3');
+    }
+    };
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    window.toggleMobileMenu = function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (!menu) return;
+    const isHidden = menu.classList.contains('translate-x-full');
+    menu.classList.toggle('translate-x-full');
+    menu.setAttribute('aria-hidden', String(!isHidden));
+    const toggleBtn = document.querySelector('nav button[aria-controls="mobile-menu"]');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', String(isHidden));
+    document.documentElement.classList.toggle('overflow-hidden', isHidden);
+    document.body.classList.toggle('overflow-hidden', isHidden);
+    };
+    
+    function initDynamicFacultyImages() {
+    // Map each department anchor (by its text) to a representative image URL
+    const imageMap = {
+    // Science & Engineering block
+    'Computer Science & IT': 'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=2000&auto=format&fit=crop',
+    'Department of Chemistry': 'https://images.unsplash.com/photo-1581092338282-38d2b9a6c52f?q=80&w=2000&auto=format&fit=crop',
+    'Department of Natural and Basic Sciences': 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000&auto=format&fit=crop',
+    
+    // Arts & Humanities block
+    'Institute of Balochi Language': 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2000&auto=format&fit=crop',
+    'Department of English': 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000&auto=format&fit=crop',
+    
+    // Business & Economics block
+    'Department of Management Sciences': 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2000&auto=format&fit=crop',
+    'Department of Economics': 'https://images.unsplash.com/photo-1554224155-3a589877462f?q=80&w=2000&auto=format&fit=crop',
+    'Department of Commerce': 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000&auto=format&fit=crop',
+    
+    // Social Sciences block
+    'Department of Political Science': 'https://images.unsplash.com/photo-1528747045269-390fe33c19d8?q=80&w=2000&auto=format&fit=crop',
+    'Department of Education': 'https://images.unsplash.com/photo-1519455953755-af066f52f1ea?q=80&w=2000&auto=format&fit=crop',
+    'Department of Sociology': 'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=2000&auto=format&fit=crop',
+    
+    // Law & Justice block
+    'Department of Law': 'https://images.unsplash.com/photo-1589578527966-fdac0f44566b?q=80&w=2000&auto=format&fit=crop'
+    };
+    
+    // Helper: find nearest image inside the same faculty block to update
+    function findBlockImage(anchor) {
+    const block = anchor.closest('.grid');
+    if (!block) return null;
+    return block.querySelector('img');
+    }
+    
+    // Attach click handlers to department links
+    document.querySelectorAll('.space-y-4 a').forEach(a => {
+    a.addEventListener('click', function(evt) {
+    const titleEl = this.querySelector('h3');
+    const key = titleEl ? titleEl.textContent.trim() : '';
+    const newSrc = imageMap[key];
+    const img = findBlockImage(this);
+    if (newSrc && img) {
+    // Prevent navigation if the link is just meant to change images
+    evt.preventDefault();
+    // Smoothly swap image
+    img.style.transition = 'opacity 250ms ease';
+    img.style.opacity = '0.2';
+    setTimeout(() => {
+    img.src = newSrc;
+    img.alt = key;
+    img.onload = () => { img.style.opacity = '1'; };
+    }, 150);
+    }
+    });
+    });
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+    }
+    onScroll();
+        });
+    })();
+    </script>
+    </body>
+    
+    </html>

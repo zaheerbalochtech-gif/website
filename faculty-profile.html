@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Profile - University of Turbat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            teal: '#0F4C5C',
+                            darkTeal: '#093642',
+                            gold: '#E0B354',
+                            red: '#9A031E',
+                            sand: '#F5F5F4',
+                            white: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-sand text-gray-900 antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- Geometric Pattern Background (Fixed) -->
+    <div class="fixed inset-0 z-0 opacity-[0.03] pointer-events-none"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%230F4C5C\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6">
+        <div class="container mx-auto px-6 md:px-12">
+            <div
+                class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-black/5">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer group" onclick="window.location.href='index.html'">
+                    <img src="https://uot.edu.pk/img/uotlogo.png" alt="UoT Logo"
+                        class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-110">
+                    <div class="hidden md:flex flex-col leading-none">
+                        <span class="text-lg font-bold text-brand-teal tracking-tight">University of Turbat</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Links -->
+                <div class="hidden xl:flex items-center gap-8 text-sm font-medium text-brand-teal/80">
+                    <a href="index.html" class="hover:text-brand-teal transition-colors font-semibold">Home</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 hover:text-brand-teal transition-colors">Academics <i
+                                data-lucide="chevron-down" class="w-3 h-3"></i></button>
+                        <div
+                            class="absolute top-full right-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div
+                                class="bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 w-[600px] grid grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Faculties
+                                    </h4>
+                                    <a href="faculties.html"
+                                        class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg">Science
+                                        & Engineering</a>
+                                    <a href="department.html?id=arts"
+                                        class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg">Arts
+                                        & Humanities</a>
+                                    <a href="department.html?id=management"
+                                        class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg">Business
+                                        & Economics</a>
+                                    <a href="department.html?id=law"
+                                        class="block py-2 text-brand-teal hover:text-brand-gold font-bold text-lg">Law &
+                                        Justice</a>
+                                </div>
+                                <div class="bg-brand-sand rounded-xl p-4">
+                                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Featured
+                                    </h4>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div
+                                            class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-brand-gold shadow-sm">
+                                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-brand-teal text-sm">Admission 2026</p>
+                                            <p class="text-xs text-gray-500">Applications are open</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-brand-gold shadow-sm">
+                                            <i data-lucide="download" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-brand-teal text-sm">Prospectus</p>
+                                            <p class="text-xs text-gray-500">Download PDF</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="hover:text-brand-teal transition-colors">Research</a>
+                    <a href="#" class="hover:text-brand-teal transition-colors">Life at UoT</a>
+                    <a href="#" class="hover:text-brand-teal transition-colors">News</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex items-center gap-4">
+                    <a href="#"
+                        class="hidden md:flex text-sm font-bold text-brand-teal hover:text-brand-gold transition-colors">Portal
+                        Login</a>
+                    <a href="faculties.html"
+                        class="bg-brand-teal hover:bg-brand-darkTeal text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-brand-teal/20 flex items-center gap-2 group">
+                        Apply Now <i data-lucide="arrow-right"
+                            class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <button onclick="toggleMobileMenu()" class="xl:hidden text-brand-teal">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-brand-teal text-white transform translate-x-full transition-transform duration-500 xl:hidden">
+        <div class="p-8">
+            <div class="flex justify-between items-center mb-12">
+                <span class="font-bold text-2xl">Menu</span>
+                <button onclick="toggleMobileMenu()" class="p-2 bg-white/10 rounded-full"><i data-lucide="x"
+                        class="w-6 h-6"></i></button>
+            </div>
+            <div class="space-y-6 text-2xl font-serif">
+                <a href="index.html" class="block hover:text-brand-gold transition-colors">Home</a>
+                <a href="faculties.html" class="block hover:text-brand-gold transition-colors">Academics</a>
+                <a href="#" class="block hover:text-brand-gold transition-colors">Research</a>
+                <a href="#" class="block hover:text-brand-gold transition-colors">Admissions</a>
+                <a href="#" class="block hover:text-brand-gold transition-colors">Portal</a>
+            </div>
+            <div class="mt-12 pt-12 border-t border-white/10">
+                <p class="text-sm text-brand-gold uppercase tracking-widest mb-4">Contact</p>
+                <p class="text-lg opacity-80">info@uot.edu.pk</p>
+                <p class="text-lg opacity-80">+92 852 411534</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="min-h-screen pt-32 pb-20 relative z-10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-white/50">
+                <!-- Cover Area -->
+                <div class="bg-brand-teal h-48 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-brand-darkTeal/50"></div>
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-gold rounded-full blur-[80px] opacity-40">
+                    </div>
+                </div>
+
+                <div class="px-8 md:px-12 pb-12">
+                    <!-- Profile Header -->
+                    <div class="relative flex flex-col md:flex-row items-start gap-8 -mt-20 mb-10">
+                        <div class="p-2 bg-white rounded-[2rem] shadow-lg">
+                            <img id="profile-img"
+                                src="https://ui-avatars.com/api/?name=Dr.+Haneef+Ur+Rahman&background=0F4C5C&color=fff&size=200"
+                                class="w-40 h-40 md:w-56 md:h-56 rounded-[1.5rem] object-cover bg-gray-100">
+                        </div>
+                        <div class="flex-1 pt-4 md:pt-20">
+                            <h1 id="profile-name"
+                                class="text-4xl md:text-5xl font-serif text-brand-darkTeal font-bold mb-2">Dr. Haneef Ur
+                                Rahman</h1>
+                            <p id="profile-desig" class="text-brand-gold font-bold uppercase tracking-wider text-sm">
+                                Assistant Professor</p>
+                            <div class="flex flex-wrap gap-6 mt-6">
+                                <a href="mailto:haneef@uot.edu.pk"
+                                    class="flex items-center gap-2 text-gray-600 hover:text-brand-teal transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-brand-sand flex items-center justify-center text-brand-teal">
+                                        <i data-lucide="mail" class="w-4 h-4"></i>
+                                    </div>
+                                    <span id="profile-email" class="text-sm font-medium">haneef@uot.edu.pk</span>
+                                </a>
+                                <div class="flex items-center gap-2 text-gray-600">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-brand-sand flex items-center justify-center text-brand-teal">
+                                        <i data-lucide="phone" class="w-4 h-4"></i>
+                                    </div>
+                                    <span class="text-sm font-medium">+92 852 411534</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="hidden md:flex mt-20 bg-brand-teal text-white px-8 py-3 rounded-xl font-bold hover:bg-brand-darkTeal transition-all shadow-lg shadow-brand-teal/20">
+                            Contact Faculty
+                        </button>
+                    </div>
+
+                    <div class="grid lg:grid-cols-3 gap-12">
+                        <div class="lg:col-span-2 space-y-12">
+                            <div>
+                                <h3 class="font-serif text-2xl text-brand-darkTeal mb-6 border-b border-gray-100 pb-2">
+                                    Biography</h3>
+                                <p id="profile-bio" class="text-gray-600 leading-relaxed text-lg font-light">
+                                    Dr. Haneef holds a PhD in Computer Science with a specialization in Artificial
+                                    Intelligence and Data Mining. With over 10 years of teaching and research
+                                    experience, he has contributed significantly to the field of Machine Learning
+                                    applied to local linguistic data. He is currently leading the "Digital Balochistan"
+                                    research initiative at UoT, aiming to digitize historical manuscripts using OCR
+                                    technology.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="font-serif text-2xl text-brand-darkTeal mb-6 border-b border-gray-100 pb-2">
+                                    Publications & Research</h3>
+                                <div class="space-y-4" id="profile-pubs">
+                                    <!-- Static Publications -->
+                                    <div
+                                        class="bg-brand-sand p-6 rounded-2xl border border-gray-200/50 hover:border-brand-gold/30 transition-colors">
+                                        <p class="font-bold text-gray-800 mb-2">2024 • International Journal of
+                                            Computing</p>
+                                        <p class="text-gray-600 italic">"Impact of AI on Educational Systems in
+                                            Developing Countries: A Case Study of Balochistan."</p>
+                                    </div>
+                                    <div
+                                        class="bg-brand-sand p-6 rounded-2xl border border-gray-200/50 hover:border-brand-gold/30 transition-colors">
+                                        <p class="font-bold text-gray-800 mb-2">2023 • IEEE Access</p>
+                                        <p class="text-gray-600 italic">"Analysis of Network Security Protocols in IoT
+                                            Devices for Smart Cities."</p>
+                                    </div>
+                                    <div
+                                        class="bg-brand-sand p-6 rounded-2xl border border-gray-200/50 hover:border-brand-gold/30 transition-colors">
+                                        <p class="font-bold text-gray-800 mb-2">2022 • Journal of Pattern Recognition
+                                            Research</p>
+                                        <p class="text-gray-600 italic">"Optical Character Recognition for Nastalik
+                                            Script: Challenges and Solutions."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <div class="bg-brand-darkTeal text-white p-8 rounded-3xl relative overflow-hidden">
+                                <div
+                                    class="absolute -right-10 -top-10 w-32 h-32 bg-brand-gold rounded-full blur-3xl opacity-30">
+                                </div>
+                                <h4 class="font-serif text-xl mb-6 relative z-10">Education</h4>
+                                <ul class="space-y-6 relative z-10" id="profile-edu">
+                                    <li class="flex gap-4">
+                                        <div class="w-2 h-2 rounded-full bg-brand-gold mt-2 shrink-0"></div>
+                                        <div>
+                                            <p class="font-bold text-lg">PhD Computer Science</p>
+                                            <p class="text-white/60 text-sm">University of Malaya, 2018</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-4">
+                                        <div class="w-2 h-2 rounded-full bg-brand-gold mt-2 shrink-0"></div>
+                                        <div>
+                                            <p class="font-bold text-lg">MS Computer Science</p>
+                                            <p class="text-white/60 text-sm">NUST, Islamabad, 2014</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-4">
+                                        <div class="w-2 h-2 rounded-full bg-brand-gold mt-2 shrink-0"></div>
+                                        <div>
+                                            <p class="font-bold text-lg">BS Computer Science</p>
+                                            <p class="text-white/60 text-sm">BUITEMS, Quetta, 2011</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-brand-sand border border-gray-200 p-8 rounded-3xl">
+                                <h4 class="font-serif text-brand-darkTeal text-xl mb-4">Research Interests</h4>
+                                <div class="flex flex-wrap gap-2" id="profile-interests">
+                                    <span
+                                        class="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700">Artificial
+                                        Intelligence</span>
+                                    <span
+                                        class="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700">Data
+                                        Mining</span>
+                                    <span
+                                        class="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700">Natural
+                                        Language Processing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer (Dark Mode) -->
+    <footer class="bg-brand-darkTeal text-white pt-24 pb-12 relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal rounded-full blur-[120px] opacity-30 pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-3 mb-8">
+                        <img src="https://uot.edu.pk/img/uotlogo.png" class="h-16 w-auto bg-white rounded-xl p-1">
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold">University of Turbat</h3>
+                            <p class="text-brand-gold text-sm tracking-widest uppercase">Tradition • Innovation</p>
+                        </div>
+                    </div>
+                    <p class="text-white/60 leading-relaxed mb-8">
+                        The University of Turbat is a public sector university in Turbat, Balochistan, Pakistan. We are
+                        committed to providing quality education and fostering a culture of research and innovation.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"><i
+                                data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"><i
+                                data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"><i
+                                data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all"><i
+                                data-lucide="instagram" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 lg:col-start-6">
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-white/60">
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Administration</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Campus Life</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">News & Events</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold text-lg mb-6">Admissions</h4>
+                    <ul class="space-y-4 text-white/60">
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">How to Apply</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Fee Structure</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Scholarships</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Prospectus</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h4 class="font-bold text-lg mb-6">Newsletter</h4>
+                    <p class="text-white/60 mb-4 text-sm">Subscribe to receive updates on admissions and events.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Email Address"
+                            class="bg-white/10 border border-white/10 rounded-lg px-4 py-3 w-full text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-brand-gold">
+                        <button
+                            class="bg-brand-gold text-brand-darkTeal px-4 rounded-lg font-bold hover:bg-white transition-colors"><i
+                                data-lucide="arrow-right" class="w-5 h-5"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
+                <p>&copy; 2026 University of Turbat. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Specific script for the sticky header transition
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.add('py-6');
+                navbar.classList.remove('py-3');
+            }
+        });
+    </script>
+</body>
+
+</html>

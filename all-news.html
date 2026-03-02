@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News & Events | University of Turbat</title>
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                darkTeal: '#0F4C5C',
+                teal: '#16697A',
+                gold: '#D4AF37',
+                sand: '#FDFBF7',
+              },
+            },
+            fontFamily: {
+              serif: ['Playfair Display', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .filter-btn.active {
+        background-color: #0F4C5C;
+        color: white;
+        border-color: #0F4C5C;
+      }
+    </style>
+</head>
+
+<body class="bg-brand-sand text-gray-900 antialiased selection:bg-brand-gold selection:text-white font-sans">
+  <!-- Geometric Pattern Background (Fixed) -->
+  <div
+    class="fixed inset-0 z-0 opacity-[0.03] pointer-events-none"
+    style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%230F4C5C\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"
+  ></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-full px-4 sm:px-6 py-3 flex items-center justify-between shadow-lg shadow-black/5">
+        <div class="flex items-center gap-3 cursor-pointer group" onclick="window.location.href='index.html'">
+          <img
+            src="https://uot.edu.pk/img/uotlogo.png"
+            alt="UoT Logo"
+            class="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110 bg-white rounded-full p-0.5"
+          />
+          <div class="hidden md:flex flex-col leading-none">
+            <span class="text-base sm:text-lg font-bold text-brand-darkTeal tracking-tight">University of Turbat</span>
+          </div>
+        </div>
+        <div class="hidden xl:flex items-center gap-6 text-sm font-medium text-brand-darkTeal">
+          <a href="index.html" class="hover:text-brand-gold transition-colors font-semibold">Home</a>
+          <a href="#" class="hover:text-brand-gold transition-colors font-semibold">Academics</a>
+          <a href="#" class="hover:text-brand-gold transition-colors font-semibold">Admissions</a>
+          <a href="#" class="hover:text-brand-gold transition-colors font-semibold text-brand-gold">News & Events</a>
+          <button class="bg-brand-darkTeal text-white px-5 py-2 rounded-full hover:bg-brand-teal transition-all">Apply Now</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative pt-36 sm:pt-40 md:pt-44 pb-12 sm:pb-16 md:pb-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-brand-gold font-bold tracking-[0.3em] uppercase text-xs sm:text-sm mb-3 sm:mb-4 block">UoT Updates</span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-brand-darkTeal mb-4 sm:mb-6">News & Announcements</h1>
+      <p class="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+        Stay informed with the latest happenings, academic breakthroughs, and vibrant campus life at the University of Turbat.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <main class="relative z-10 pb-24 sm:pb-28 md:pb-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Category Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12 md:mb-16">
+        <button type="button" class="filter-btn active px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full border border-gray-200 font-bold transition-all hover:border-brand-darkTeal" data-category="all" aria-pressed="true">All Updates</button>
+        <button type="button" class="filter-btn px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full border border-gray-200 font-bold transition-all hover:border-brand-darkTeal" data-category="latest" aria-pressed="false">Latest News</button>
+        <button type="button" class="filter-btn px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full border border-gray-200 font-bold transition-all hover:border-brand-darkTeal" data-category="academic" aria-pressed="false">Academic Updates</button>
+        <button type="button" class="filter-btn px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full border border-gray-200 font-bold transition-all hover:border-brand-darkTeal" data-category="campus" aria-pressed="false">Campus Events</button>
+        <button type="button" class="filter-btn px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full border border-gray-200 font-bold transition-all hover:border-brand-darkTeal" data-category="research" aria-pressed="false">Research</button>
+      </div>
+
+      <!-- News Grid -->
+      <div id="news-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Latest -->
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="latest">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop" alt="Graduation ceremony at sunset" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Latest</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>October 24, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">UoT Annual Convocation Scheduled for December</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">The University of Turbat announces its annual convocation ceremony celebrating the achievements of graduating students with distinguished guests in attendance.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="latest">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1514609776465-4f2b3f1f1c9a?q=80&w=1200&auto=format&fit=crop" alt="University auditorium with seats" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Latest</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>October 20, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">New Auditorium AV System Installed</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">State-of-the-art audio-visual upgrades completed in the main auditorium to enhance academic events, seminars, and cultural activities.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <!-- Academic -->
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="academic">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1200&auto=format&fit=crop" alt="Students in a modern classroom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Academic</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>October 18, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">Fall Semester Midterm Schedule Announced</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">Departmental midterm timetables are now available. Students are advised to check their respective departments for detailed schedules.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="academic">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop" alt="Library shelves with books" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Academic</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>October 10, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">Extended Library Hours for Exam Prep</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">The central library will remain open until 10 PM during the midterm period to support students' preparation needs.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <!-- Campus -->
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="campus">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop" alt="Outdoor campus festival with lights" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Campus</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>October 12, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">Student Tech-Expo 2026: Innovation at its Best</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">Over 50 student-led projects were showcased, attracting local industry leaders and opening new collaboration opportunities.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="campus">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1200&auto=format&fit=crop" alt="Sports day on a green field" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Campus</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>October 05, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">Inter-Departmental Sports Week Announced</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">Cricket, football, volleyball, and athletics events will be held throughout the week with prizes for top teams and players.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <!-- Research -->
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="research">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1581093588401-16f8c8c7f0c4?q=80&w=1200&auto=format&fit=crop" alt="Researcher using laboratory equipment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Research</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>October 18, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">Breakthrough in Sustainable Agriculture Research</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">Faculty of Science publishes a pioneering study on arid-land irrigation techniques tailored for Balochistan’s climate.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="research">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop" alt="Microscope in a lab environment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Research</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>September 29, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">UoT Secures Grant for Water Quality Initiative</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">A multi-disciplinary team receives funding to analyze and improve regional water quality through community-led monitoring.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <!-- More Latest/Academic/Campus to enrich the page -->
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="latest">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop" alt="Group of students collaborating with laptops" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Latest</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>September 22, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">Career Development Workshops Announced</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">A series of workshops on CV building, interview skills, and networking will be conducted by the Career Services Center.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="academic">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop" alt="STEM classroom whiteboard with formulas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Academic</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>September 15, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">New Electives in Data Science Introduced</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">The Computer Science department adds electives on Machine Learning and Data Visualization for the upcoming term.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="campus">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Campus greenery with students walking" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Campus</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>September 12, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">Tree Plantation Drive by Environmental Club</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">Volunteers planted 300+ saplings around the campus as part of the university’s sustainability initiative.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+
+        <article class="news-card group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-category="research">
+          <div class="relative h-48 sm:h-56 overflow-hidden">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1581091215367-59ab6b4b4c04?q=80&w=1200&auto=format&fit=crop" alt="Research team analyzing data charts" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute top-4 right-4 bg-brand-gold text-brand-darkTeal px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest">Research</div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <div class="flex items-center gap-2 text-brand-gold text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>August 30, 2026</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-brand-darkTeal mb-3 line-clamp-2">Journal Publication: Desert Climate Resilience</h3>
+            <p class="text-gray-600 text-sm mb-5 line-clamp-3">UoT scholars publish findings on infrastructure resilience to extreme temperatures in international journals.</p>
+            <a href="#" class="inline-flex items-center gap-2 text-brand-darkTeal font-bold group/link">Read More <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Empty state (hidden by default) -->
+      <div id="empty-state" class="hidden text-center py-16 text-gray-500">
+        <p class="text-sm sm:text-base">No news found for this category at the moment.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-darkTeal text-white pt-20 md:pt-24 pb-10 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[360px] sm:w-[420px] md:w-[500px] h-[360px] sm:h-[420px] md:h-[500px] bg-brand-teal rounded-full blur-[120px] opacity-30 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-12 mb-14 md:mb-20">
+        <div class="lg:col-span-4">
+          <div class="flex items-center gap-3 mb-6 md:mb-8">
+            <img src="https://uot.edu.pk/img/uotlogo.png" class="h-14 w-14 md:h-16 md:w-16 bg-white rounded-xl p-1" alt="UoT Logo" />
+            <div>
+              <h3 class="text-xl md:text-2xl font-serif font-bold">University of Turbat</h3>
+              <p class="text-brand-gold text-xs md:text-sm tracking-widest uppercase">Tradition • Innovation</p>
+            </div>
+          </div>
+          <p class="text-white/70 leading-relaxed mb-6 md:mb-8 text-sm md:text-base">The University of Turbat is a public sector university in Turbat, Balochistan, Pakistan. We are committed to quality education and a culture of research and innovation.</p>
+          <div class="flex gap-3 md:gap-4">
+            <a href="#" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="#" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all" aria-label="Twitter"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+            <a href="#" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="#" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-gold hover:text-brand-darkTeal transition-all" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 lg:col-start-6">
+          <h4 class="font-bold text-lg mb-4 md:mb-6">Quick Links</h4>
+          <ul class="space-y-3 md:space-y-4 text-white/70 text-sm md:text-base">
+            <li><a href="#" class="hover:text-brand-gold transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Administration</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Campus Life</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">News & Events</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2">
+          <h4 class="font-bold text-lg mb-4 md:mb-6">Admissions</h4>
+          <ul class="space-y-3 md:space-y-4 text-white/70 text-sm md:text-base">
+            <li><a href="#" class="hover:text-brand-gold transition-colors">How to Apply</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Fee Structure</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Scholarships</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">Prospectus</a></li>
+            <li><a href="#" class="hover:text-brand-gold transition-colors">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h4 class="font-bold text-lg mb-4 md:mb-6">Newsletter</h4>
+          <p class="text-white/70 mb-3 md:mb-4 text-sm">Subscribe to receive updates on admissions and events.</p>
+          <form class="flex gap-2" onsubmit="event.preventDefault();">
+            <label for="newsletter-email" class="sr-only">Email Address</label>
+            <input id="newsletter-email" type="email" placeholder="Email Address" class="bg-white/10 border border-white/10 rounded-lg px-3 md:px-4 py-2.5 md:py-3 w-full text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-brand-gold" />
+            <button class="bg-brand-gold text-brand-darkTeal px-3 md:px-4 rounded-lg font-bold hover:bg-white transition-colors" aria-label="Subscribe">
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-white/50">
+        <p>&copy; 2026 University of Turbat. All rights reserved.</p>
+        <div class="flex gap-5 mt-3 md:mt-0">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    if (window.lucide && typeof lucide.createIcons === 'function') {
+      lucide.createIcons();
+    }
+
+    // Filtering Logic (accessible + data-driven)
+    const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+    const cards = Array.from(document.querySelectorAll('.news-card'));
+    const emptyState = document.getElementById('empty-state');
+
+    function setActiveButton(targetCategory) {
+      buttons.forEach((btn) => {
+        const isActive = btn.getAttribute('data-category') === targetCategory || (targetCategory === 'all' && btn.getAttribute('data-category') === 'all');
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
+    function filterNews(category) {
+      let visible = 0;
+      cards.forEach((card) => {
+        const match = category === 'all' || card.getAttribute('data-category') === category;
+        card.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+      if (emptyState) emptyState.classList.toggle('hidden', visible !== 0);
+    }
+
+    // Attach listeners
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-category');
+        setActiveButton(cat);
+        filterNews(cat);
+      });
+    });
+
+    // Default state
+    filterNews('all');
+
+    // Read More: navigate to dynamic detail page with slug
+    const readMoreLinks = Array.from(document.querySelectorAll('.news-card a'));
+    // Map known titles to slugs defined in news.json
+    const slugMap = new Map([
+      ['UoT Annual Convocation Scheduled for December', 'convocation-2026'],
+      ['New Auditorium AV System Installed', 'auditorium-av-upgrade'],
+      ['Fall Semester Midterm Schedule Announced', 'midterm-schedule-fall-2026'],
+      ['Extended Library Hours for Exam Prep', 'library-hours-extended-midterms'],
+      ['Student Tech-Expo 2026: Innovation at its Best', 'tech-expo-2026'],
+      ['Inter-Departmental Sports Week Announced', 'sports-week-announce-2026'],
+      ['Breakthrough in Sustainable Agriculture Research', 'sustainable-agri-research'],
+      ['UoT Secures Grant for Water Quality Initiative', 'water-quality-grant'],
+      ['Career Development Workshops Announced', 'career-workshops-sept-2026'],
+      ['New Electives in Data Science Introduced', 'data-science-electives'],
+      ['Tree Plantation Drive by Environmental Club', 'plantation-drive-2026'],
+      ['Journal Publication: Desert Climate Resilience', 'desert-resilience-publication'],
+    ]);
+
+    readMoreLinks.forEach((link) => {
+      if (!/\bread more\b/i.test(link.textContent.trim())) return;
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = link.closest('.news-card');
+        if (!card) return;
+        const titleEl = card.querySelector('h3');
+        const title = titleEl ? titleEl.textContent.trim() : '';
+        const slug = slugMap.get(title);
+        if (slug) {
+          window.location.href = `news-detail.html?id=${encodeURIComponent(slug)}`;
+        } else {
+          // Fallback: go to all news if mapping missing
+          window.location.href = 'all-news.html';
+        }
+      });
+    });
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (!nav) return;
+      if (window.scrollY > 50) {
+        nav.classList.add('py-2');
+        const inner = nav.querySelector('div > div');
+        if (inner) inner.classList.replace('bg-white/10', 'bg-white/90');
+      } else {
+        nav.classList.remove('py-2');
+        const inner = nav.querySelector('div > div');
+        if (inner) inner.classList.replace('bg-white/90', 'bg-white/10');
+      }
+    });
+  </script>
+</body>
+</html>
